@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Sayori ❤️</title>
 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #ffd6e7, #fff0f6, #ffd1dc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            color: #5a2638;
+        }
+
+        .carta {
+            max-width: 750px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 15px 45px rgba(120, 40, 70, 0.25);
+            animation: aparecer 1.5s ease;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d94f7c;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .corazon {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 10px;
+            animation: latido 1.5s infinite;
+        }
+
+        .firma {
+            text-align: right;
+            font-size: 22px;
+            color: #d94f7c;
+            margin-top: 35px;
+        }
+
+        #botonMusica {
+            display: block;
+            margin: 0 auto 25px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #d94f7c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #botonMusica:hover {
+            background: #c43d69;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .carta {
+                padding: 25px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="carta">
+
+        <div class="corazon">❤️</div>
+
+        <h1>Para ti, mi amor</h1>
+
+        <button id="botonMusica" onclick="reproducirMusica()">
+            🎵 Escuchar mientras lees
+        </button>
+
+        <audio id="musica" loop>
+            <source src="musica.mp3" type="audio/mpeg">
+        </audio>
+
+        <p>
+            Amor, solo quería recordarte lo mucho que significas para mí. ❤️
+            A veces no encuentro las palabras exactas para decirte todo lo que
+            siento, pero quiero que sepas que tenerte en mi vida es de las cosas
+            más bonitas que me han pasado. Me encanta compartir contigo,
+            reírnos por cualquier tontería, hablar de todo y hasta esos momentos
+            en los que simplemente estamos juntos sin decir mucho.
+        </p>
+
+        <p>
+            No sé qué nos depare el futuro, pero sí sé que quiero seguir
+            construyendo momentos contigo, apoyarte, cuidarte y estar a tu lado
+            en los días buenos y también en los no tan buenos. Gracias por ser tú,
+            por tu cariño y por hacer que mis días sean mucho más especiales.
+        </p>
+
+        <p>
+            Te quiero muchísimo, mi amor. Y aunque quizá no te lo diga todos los
+            días, espero que nunca dudes de lo importante que eres para mí. ❤️
+        </p>
+
+        <div class="firma">
+            Con todo mi amor ❤️
+        </div>
+
+    </div>
+
+    <script>
+        function reproducirMusica() {
+            const musica = document.getElementById("musica");
+            const boton = document.getElementById("botonMusica");
+
+            musica.play();
+
+            boton.innerHTML = "🎵 Reproduciendo...";
+        }
+    </script>
+
+</body>
+</html>
